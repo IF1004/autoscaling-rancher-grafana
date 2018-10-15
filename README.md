@@ -4,26 +4,26 @@ Especificação e construção de um serviço/mecanismo de autoscaling para os c
 
 ## GQM
 
-| Goal | Garantir a disponibilidade de serviço de acordo com a demanda |
+| Goal | Promover auto-escalabilidade em um cluster Swarm de acordo com a sua demanda de recursos |
 | ------------- | ------------- |
-| Questions | Como garantir uma quantidade mínima de containers para suprir uma demanda de serviço? Como identificar a necessidade de mais demanda? |
-| Metrics | Uso de recursos (memória, cpu) Numero de requisições |
+| Questions | Quantas instâncias estão em execução no cluster? Como determinar a necessidade de escalabilidade? |
+| Metrics | Quantidade de instâncias; Uso de CPU; Uso de memória|
 
 ## Goal Definition Template
-Analyze a oferta de serviço
-for the purpose of garantir a disponibilidade
-with respect to saúde do serviço
-from the viewpoint of engenheiro de configuração
-in the context of containers docker
+Monitorar cluster
+com o propósito de promover auto-escalabilidade
+com respeito recursos computacionais
+do ponto de vista do engenheiro de configuração
+no contexto de containers docker
 
 ## Questions Definition
 * Goal
-    * Question 1: Como garantir uma quantidade mínima de containers para suprir uma demanda de serviço?
-    * Question 2: Como identificar a necessidade de mais demanda?
+    * Question 1: Quantas instâncias estão em execução no cluster?
+    * Question 2: Como determinar a necessidade de escalabilidade?
 
 ## Metrics Definition
 * Question 1:
-    * Metric 1: Uso de recursos (memória, cpu)
+    * Metric 1: Quantidade de instâncias
 * Question 2:
-    * Metric 1: Uso de recursos (memória, cpu)
-    * Metric 2: Número de requisições
+    * Metric 2: Uso de CPU
+    * Metric 3: Uso de memória
