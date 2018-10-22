@@ -6,7 +6,7 @@ Especificação e construção de um serviço/mecanismo de autoscaling para os c
 
 | Goal | Promover auto-escalabilidade em um cluster Swarm de acordo com a sua demanda de recursos |
 | ------------- | ------------- |
-| Questions | Quantas instâncias estão em execução no cluster? Como determinar a necessidade de escalabilidade? |
+| Questions | Como levantar automáticamente novos containers em cluster swarm? Como monitorar os recursos para determinar a escalabilidade? |
 | Metrics | Quantidade de instâncias; Uso de CPU; Uso de memória|
 
 ## Goal Definition Template
@@ -18,8 +18,8 @@ no contexto de containers docker
 
 ## Questions Definition
 * Goal
-    * Question 1: Quantas instâncias estão em execução no cluster?
-    * Question 2: Como determinar a necessidade de escalabilidade?
+    * Question 1: Como levantar automáticamente novos containers em cluster swarm?
+    * Question 2: Como monitorar os recursos para determinar a escalabilidade?
 
 ## Metrics Definition
 * Question 1:
