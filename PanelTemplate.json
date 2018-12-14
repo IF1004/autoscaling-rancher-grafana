@@ -1,0 +1,185 @@
+{
+  "alert": {
+    "conditions": [
+      {
+        "evaluator": {
+          "params": [
+            0
+          ],
+          "type": "gt"
+        },
+        "operator": {
+          "type": "and"
+        },
+        "query": {
+          "params": [
+            "A",
+            "1m",
+            "now"
+          ]
+        },
+        "reducer": {
+          "params": [
+
+          ],
+          "type": "avg"
+        },
+        "type": "query"
+      }
+    ],
+    "executionErrorState": "alerting",
+    "for": "1m",
+    "frequency": "1m",
+    "handler": 1,
+    "message": "",
+    "name": "",
+    "noDataState": "no_data",
+    "notifications": [
+      {
+        "id": 0
+      }
+    ]
+  },
+  "aliasColors": {
+
+  },
+  "bars": false,
+  "dashLength": 10,
+  "dashes": false,
+  "datasource": "influx",
+  "fill": 1,
+  "gridPos": {
+    "h": 9,
+    "w": 12,
+    "x": 0,
+    "y": 0
+  },
+  "id": 0,
+  "legend": {
+    "avg": false,
+    "current": false,
+    "max": false,
+    "min": false,
+    "show": true,
+    "total": false,
+    "values": false
+  },
+  "lines": true,
+  "linewidth": 1,
+  "links": [
+
+  ],
+  "nullPointMode": "null",
+  "percentage": false,
+  "pointradius": 5,
+  "points": false,
+  "renderer": "flot",
+  "repeat": null,
+  "repeatDirection": "v",
+  "seriesOverrides": [
+
+  ],
+  "spaceLength": 10,
+  "stack": false,
+  "steppedLine": false,
+  "targets": [
+    {
+      "alias": "",
+      "groupBy": [
+        {
+          "params": [
+            "$__interval"
+          ],
+          "type": "time"
+        }
+      ],
+      "hide": false,
+      "measurement": "cpu_usage_total",
+      "orderByTime": "ASC",
+      "policy": "default",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "value"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [
+
+            ],
+            "type": "mean"
+          },
+          {
+            "params": [
+              "1m"
+            ],
+            "type": "derivative"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "io.rancher.stack_service.name",
+          "operator": "=",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "thresholds": [
+    {
+      "colorMode": "critical",
+      "fill": true,
+      "line": true,
+      "op": "gt",
+      "value": 0
+    }
+  ],
+  "timeFrom": null,
+  "timeRegions": [
+
+  ],
+  "timeShift": null,
+  "title": "",
+  "tooltip": {
+    "shared": true,
+    "sort": 0,
+    "value_type": "individual"
+  },
+  "type": "graph",
+  "xaxis": {
+    "buckets": null,
+    "mode": "time",
+    "name": null,
+    "show": true,
+    "values": [
+
+    ]
+  },
+  "yaxes": [
+    {
+      "format": "hertz",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    },
+    {
+      "format": "short",
+      "label": null,
+      "logBase": 1,
+      "max": null,
+      "min": null,
+      "show": true
+    }
+  ],
+  "yaxis": {
+    "align": false,
+    "alignLevel": null
+  }
+}
