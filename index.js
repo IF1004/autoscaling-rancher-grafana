@@ -12,7 +12,7 @@ const API_RANCHER_WEBHOOK = URL_API_RANCHER + "v1-webhooks/";
 
 
 const PREFIX_LABEL = "scale.";
-var APIKEYS = {"username": "AA75F2821934A0510E37", "password": "znkdPG6yMo1bBsLEavTAqQQqs6rqSNa2aFWEMNCo"}
+var APIKEYS = {"username": "1C68819471683113BCDD", "password": "ngGEjcTVtwbBrYzUgrH7wSREoXaYXRrLqYsC3Kws"}
 var CONFIG = {"domain": "http://10.0.2.2:3000"}
 var HOSTS = {};
 var SERVICES = {};
@@ -53,16 +53,18 @@ app.get('/webhook', function (req, res) {
 });
 
 app.post('/webhook', function (req, res) {
+    console.log(req.body)
     var ruleName = req.body.ruleName.split("/")
     var stack_name = ruleName[0]
     var service_name = ruleName[1]
     for(var s in SERVICES) {
         var service = SERVICES[s]
-        if(service["name"] == service_name && STACKS[service["stack"]] == stack_name) {
-            request.post(WEBHOOKS[s])
+        if (service["name"] == service_name && STACKS[service["stack"]] == stack_name) {
+            request.post(WEBHOOKS[s]).then((result) => {
+                res.send()
+            })
         }
     }
-    res.send()
 });
 
 app.get('/webhook/update', function (req, res) {
@@ -134,7 +136,7 @@ function serviceUpdate(callback) {
                     service_data["stack"] = service.environmentId
                     services_data[service.id] = service_data
                 } catch (e) {
-
+                    console.log(e)
                 }
             }
         }
