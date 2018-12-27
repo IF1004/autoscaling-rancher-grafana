@@ -5,6 +5,7 @@ const panel_template = require("./PanelTemplate")
 var URL_API_GRAFANA = "http://192.168.99.100:3000/api/";
 var TOKEN = "eyJrIjoiNk9DbEQ0YXNHbWRwQ29wTHNuRjU1NG84NjdySldHaW4iLCJuIjoic2NhbGUtc2VydmljZSIsImlkIjoxfQ=="
 
+
 var WEBHOOK_SERVICE
 var NOTIFICATION_CHANNEL_ID
 const NOTIFICATION_NAME = "scale-service-notification"
