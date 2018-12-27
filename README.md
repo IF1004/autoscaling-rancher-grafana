@@ -33,10 +33,10 @@ no contexto de containers docker
 * scaleservice-simple
 
 ## Preparação das Ferramentas
-* Leia PREPARING
+* Leia [PREPARING](PREPARING.MD)
 
 ## Serviço de Escalabilidade
-# scaleservice-simple
+### scaleservice-simple
 Foi escrito em nodejs e funciona como um conector entre o Rancher e o Grafana. Ele cria os webhook no Rancher e cria os alertas no Grafana para os seviços indicados. Além disso ele recebe os alertas e redireciona para o webhook no Rancher.
 
 o scaleservice-simple irá filtrar os serviços que possuem um JSON na descrição. Um exemplo de JSON:
@@ -64,6 +64,10 @@ Para usar o serviço você precisa acessar os endpoints:
 * Extrai e atualiza os webhooks
 
         /webhook/update
+
+### Relatório de Projeto e Vídeo de Apresentação de Uso
+* [Relatório](Relatorio_Projeto.pdf)
+* [Vídeo](https://www.youtube.com/watch?v=KjUftPviaOs)
 
 # TODO
 Ainda é necessário criar um TOKEN de acesso no Grafana e indicar os domínios dos sistema direto no código. Será criado um endpoint para atualização dessas variáveis.
